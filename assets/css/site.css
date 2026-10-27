@@ -1211,3 +1211,11 @@ a, button, .btn, .tab, .chip, .tile__add, .dock__item { touch-action: manipulati
   .stage__mark span { font-size: clamp(4.5rem, 24vw, 10rem); }
 }
 @media (max-width: 420px) { .stage__ktext i { margin: 0 6px 2px; } }
+
+/* v6.1 — DezaCo logo (yellow flame-D on safety red) */
+.brand__mark { color: var(--yellow, #ffc20e); width: 46px; height: 46px; }
+.brand__glyph { width: 82%; height: 82%; fill: currentColor; display: block; transform: translateX(-3%); }
+.plate-logo { color: var(--yellow, #ffc20e); }
+.plate-logo svg { width: 68%; height: 68%; fill: currentColor; }
+/* hero: no underline under DEZACO */
+.hero-h em::after { content: none; display: none; }

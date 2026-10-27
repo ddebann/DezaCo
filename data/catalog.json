@@ -1,0 +1,662 @@
+{
+ "site": {
+  "name": "DezaCo",
+  "tagline": "Fire protection equipment",
+  "phone": "+1 (XXX) XXX-XXXX",
+  "whatsapp": "1XXXXXXXXXX",
+  "email": "sales@dezaco.example",
+  "address": "Office address, USA",
+  "hours": "Office hours: to be confirmed"
+ },
+ "categories": [
+  {
+   "slug": "valves",
+   "code": "V",
+   "name": "Valves & Flow Control",
+   "sign": "Valves",
+   "icon": "valve",
+   "intro": "Isolation, check, relief and strainer valves for fire mains, sprinkler risers and pump rooms, plus the joints and fittings that go with them.",
+   "ask": [
+    "Size (DN or inches)",
+    "Pressure rating",
+    "End connection: flanged, grooved or threaded",
+    "Quantity"
+   ]
+  },
+  {
+   "slug": "hydrant-hose",
+   "code": "H",
+   "name": "Hydrant & Hose",
+   "sign": "Hydrant & Hose",
+   "icon": "hydrant",
+   "intro": "Everything between the fire main and the firefighter: hydrants, landing and hose valves, hose, reels, cabinets, inlets and nozzles.",
+   "ask": [
+    "Size and thread or coupling type",
+    "Hose length, where relevant",
+    "Indoor or outdoor installation",
+    "Quantity"
+   ]
+  },
+  {
+   "slug": "extinguishers",
+   "code": "E",
+   "name": "Fire Extinguishers",
+   "sign": "Extinguishers",
+   "icon": "extinguisher",
+   "intro": "Portable extinguishers for each fire class, from general offices and warehouses to kitchens and electrical rooms.",
+   "ask": [
+    "Type and capacity (kg or litres)",
+    "Where it will be used",
+    "Wall brackets or stands needed",
+    "Quantity"
+   ]
+  },
+  {
+   "slug": "fire-pumps",
+   "code": "P",
+   "name": "Fire Pump Systems",
+   "sign": "Fire Pumps",
+   "icon": "pump",
+   "intro": "Main, standby and pressure-maintenance pumps with their controllers, supplied individually or as a complete pump set.",
+   "ask": [
+    "Required flow and pressure (head)",
+    "Electric, diesel or both",
+    "Power supply available on site",
+    "Complete set or individual units"
+   ]
+  }
+ ],
+ "products": [
+  {
+   "slug": "gate-valve",
+   "cat": "valves",
+   "name": "Gate Valve",
+   "short": "Isolates water flow within pipeline systems.",
+   "desc": "A full-bore isolation valve for fire mains and pump rooms. When open, the gate lifts clear of the waterway so water flows with almost no pressure loss; when closed, it shuts the line for maintenance or zoning. The rising stem shows at a glance whether the valve is open or shut.",
+   "uses": [
+    "Fire main isolation",
+    "Pump suction and delivery lines",
+    "Riser and zone isolation"
+   ],
+   "aliases": [
+    "OS&Y valve",
+    "sluice valve",
+    "isolation valve",
+    "rising stem"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "non-return-valve",
+   "cat": "valves",
+   "name": "Non-Return Valve",
+   "short": "Prevents reverse flow in fire pipelines.",
+   "desc": "A swing check valve that lets water pass in one direction only. It stops the system draining back through the pump when the pump stops and protects pumps from reverse rotation.",
+   "uses": [
+    "Pump delivery lines",
+    "Fire main connections",
+    "Tank and riser outlets"
+   ],
+   "aliases": [
+    "check valve",
+    "NRV",
+    "swing check valve"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "butterfly-valve",
+   "cat": "valves",
+   "name": "Butterfly Valve",
+   "short": "Compact valve for flow isolation control.",
+   "desc": "A quarter-turn isolation valve that takes up far less pipe length than a gate valve. Available with a gear operator and handwheel for larger lines, or a lever for smaller ones.",
+   "uses": [
+    "Sprinkler and hydrant mains",
+    "Pump rooms with limited space",
+    "Zone isolation"
+   ],
+   "aliases": [
+    "grooved butterfly valve",
+    "lug butterfly valve",
+    "wafer valve"
+   ],
+   "images": [
+    1,
+    2
+   ]
+  },
+  {
+   "slug": "y-strainer",
+   "cat": "valves",
+   "name": "Y-Strainer",
+   "short": "Filters debris from water flow systems.",
+   "desc": "Traps sand, scale and debris before they reach pumps, valves and sprinkler heads. The angled screen can be removed and cleaned without taking the strainer out of the line.",
+   "uses": [
+    "Pump suction lines",
+    "Upstream of control and relief valves",
+    "Water supply connections"
+   ],
+   "aliases": [
+    "strainer",
+    "Y strainer",
+    "filter"
+   ],
+   "images": [
+    1,
+    2
+   ]
+  },
+  {
+   "slug": "pressure-relief-valve",
+   "cat": "valves",
+   "name": "Pressure Relief Valve",
+   "short": "Releases excess pressure for system safety.",
+   "desc": "A pilot-operated valve that opens automatically when system pressure rises above its set point and closes again once pressure returns to normal, protecting pipework and fittings from overpressure.",
+   "uses": [
+    "Fire pump discharge lines",
+    "Diesel pump overpressure protection",
+    "Pressure-sensitive zones"
+   ],
+   "aliases": [
+    "relief valve",
+    "PRV",
+    "pressure reducing valve",
+    "pilot valve"
+   ],
+   "images": [
+    1,
+    2
+   ]
+  },
+  {
+   "slug": "foot-valve",
+   "cat": "valves",
+   "name": "Foot Valve",
+   "short": "A specialized one-way check valve.",
+   "desc": "Fitted at the bottom of a pump suction pipe, the foot valve keeps the suction line full of water so the pump stays primed. Its strainer basket stops large debris from entering the pipe.",
+   "uses": [
+    "Pumps drawing from underground tanks",
+    "Suction lift installations",
+    "Reservoir intakes"
+   ],
+   "aliases": [
+    "suction valve",
+    "strainer foot valve"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "ball-valve",
+   "cat": "valves",
+   "name": "Ball Valve",
+   "short": "Quick shut-off valve for pipelines.",
+   "desc": "A brass quarter-turn valve for small-bore lines. One lever movement opens or closes it fully, making it ideal for drain, test and gauge connections.",
+   "uses": [
+    "Drain and test lines",
+    "Gauge isolation",
+    "Small-bore branch lines"
+   ],
+   "aliases": [
+    "brass ball valve",
+    "lever valve",
+    "quarter turn valve"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "air-vent-valve",
+   "cat": "valves",
+   "name": "Air Vent Valve",
+   "short": "Removes trapped air from pipelines automatically.",
+   "desc": "Releases air that collects at the high points of a piping system. Trapped air reduces flow and causes water hammer; an automatic air vent lets it out while keeping water in.",
+   "uses": [
+    "Top of risers and mains",
+    "Pump casings",
+    "High points in hydrant lines"
+   ],
+   "aliases": [
+    "air release valve",
+    "automatic air vent",
+    "AAV"
+   ],
+   "images": [
+    2
+   ]
+  },
+  {
+   "slug": "flexible-joint",
+   "cat": "valves",
+   "name": "Flexible Joint",
+   "short": "Absorbs vibration and pipeline movement stress.",
+   "desc": "A flanged rubber expansion joint that isolates pump vibration from the pipework and absorbs small movements and misalignment between connected pipes.",
+   "uses": [
+    "Pump suction and delivery connections",
+    "Building expansion gaps",
+    "Equipment connections"
+   ],
+   "aliases": [
+    "rubber bellows",
+    "expansion joint",
+    "flexible connector"
+   ],
+   "images": [
+    1,
+    2
+   ]
+  },
+  {
+   "slug": "hose-rack-nipple",
+   "cat": "valves",
+   "name": "Fire Hose Rack Nipple",
+   "short": "Connector fitting for hose rack systems.",
+   "desc": "A machined brass nipple that joins the hose valve to the hose rack assembly, giving a secure threaded connection for the hose.",
+   "uses": [
+    "Hose rack assemblies",
+    "Hose valve to hose connection",
+    "Replacement fittings"
+   ],
+   "aliases": [
+    "hose nipple",
+    "brass nipple",
+    "hose adaptor"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "pillar-hydrant",
+   "cat": "hydrant-hose",
+   "name": "Pillar Hydrant",
+   "short": "Outdoor hydrant for firefighting water access.",
+   "desc": "A two-way outdoor hydrant that gives firefighters direct access to the fire main. Each outlet has its own valve and cap, so two hose lines can be run at once.",
+   "uses": [
+    "Factory compounds and yards",
+    "Warehouses and depots",
+    "Building perimeters"
+   ],
+   "aliases": [
+    "fire hydrant",
+    "two way hydrant",
+    "yard hydrant",
+    "stand post"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "oblique-landing-valve",
+   "cat": "hydrant-hose",
+   "name": "Oblique Landing Valve",
+   "short": "Hydrant valve for hose connection control.",
+   "desc": "A hydrant valve with an angled outlet that connects hose to the building's fire main at each floor or landing. Available with flanged or screwed inlets.",
+   "uses": [
+    "Floor landings in high-rise buildings",
+    "Hydrant cabinets",
+    "Wet and dry risers"
+   ],
+   "aliases": [
+    "landing valve",
+    "hydrant valve",
+    "oblique valve"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "angle-hose-valve",
+   "cat": "hydrant-hose",
+   "name": "Angle Hose Valve",
+   "short": "Controls water discharge through fire hoses.",
+   "desc": "A brass right-angle valve that controls water from the standpipe to the hose. Used inside hose cabinets and on hose racks.",
+   "uses": [
+    "Hose cabinets",
+    "Hose rack stations",
+    "Standpipe outlets"
+   ],
+   "aliases": [
+    "hose valve",
+    "brass angle valve",
+    "fire hose valve"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "lay-flat-fire-hose",
+   "cat": "hydrant-hose",
+   "name": "Jacket Lay-flat Fire Hose",
+   "short": "Flexible high-pressure firefighting water delivery hose.",
+   "desc": "A woven-jacket fire hose with a rubber lining that lies flat when empty, so it rolls or folds compactly into cabinets and racks. Supplied with couplings fitted.",
+   "uses": [
+    "Hydrant cabinets",
+    "Hose racks",
+    "Pillar hydrant and fire brigade use"
+   ],
+   "aliases": [
+    "fire hose",
+    "canvas hose",
+    "RRL hose",
+    "layflat hose"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "hydrant-box",
+   "cat": "hydrant-hose",
+   "name": "Hydrant Box",
+   "short": "Protective cabinet for hydrant equipment storage.",
+   "desc": "A steel cabinet that keeps the landing valve, hose and nozzle together, protected and ready to use. Mounted on the wall or recessed beside the riser.",
+   "uses": [
+    "Corridors and stairwells",
+    "Factory floors",
+    "Car parks"
+   ],
+   "aliases": [
+    "hose cabinet",
+    "hydrant cabinet",
+    "fire cabinet"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "fire-hose-reel",
+   "cat": "hydrant-hose",
+   "name": "Fire Hose Reel",
+   "short": "Quick-response hose reel for firefighting use.",
+   "desc": "A swinging reel with semi-rigid hose that one person can run out and use immediately, without unrolling or connecting anything. Suited to first-response firefighting by building staff.",
+   "uses": [
+    "Offices and factory floors",
+    "Warehouses",
+    "Hotels and residential buildings"
+   ],
+   "aliases": [
+    "hose reel",
+    "swinging hose reel",
+    "first aid hose reel"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "breeching-inlet",
+   "cat": "hydrant-hose",
+   "name": "Breeching Inlet",
+   "short": "Fire brigade water connection inlet point.",
+   "desc": "The external connection where the fire service pumps water into the building's riser. Available as two-way and four-way inlets, each with caps and a drain valve.",
+   "uses": [
+    "Dry and wet risers",
+    "Building street frontage",
+    "Sprinkler system fire brigade inlets"
+   ],
+   "aliases": [
+    "fire brigade inlet",
+    "siamese connection",
+    "2 way inlet",
+    "4 way inlet"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "hose-rack",
+   "cat": "hydrant-hose",
+   "name": "Hose Rack",
+   "short": "Organized storage rack for firefighting hoses.",
+   "desc": "A wall-mounted rack that holds folded hose ready for use. When the hose is pulled, the rack releases it in a controlled way so it pays out without kinking.",
+   "uses": [
+    "Standpipe hose stations",
+    "Hose cabinets",
+    "Industrial walls and columns"
+   ],
+   "aliases": [
+    "hose rack assembly",
+    "semi automatic hose rack"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "fog-nozzle",
+   "cat": "hydrant-hose",
+   "name": "Fog Nozzle",
+   "short": "Produces fine mist for fire suppression.",
+   "desc": "A brass nozzle that changes from a shut-off to a wide fog pattern by twisting the barrel. The fog pattern cools a fire and protects the operator.",
+   "uses": [
+    "Hose reels and hose racks",
+    "Hydrant cabinets",
+    "Fire brigade and in-house teams"
+   ],
+   "aliases": [
+    "spray nozzle",
+    "branch pipe",
+    "hose nozzle"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "abc-dry-powder-extinguisher",
+   "cat": "extinguishers",
+   "name": "ABC Dry Powder Extinguisher",
+   "short": "Multipurpose extinguisher for Class A, B and C fires.",
+   "desc": "The general-purpose extinguisher for solid materials, flammable liquids and gases. The most common choice for factories, warehouses and vehicles.",
+   "uses": [
+    "Factory floors and warehouses",
+    "Vehicles and generator rooms",
+    "General building protection"
+   ],
+   "aliases": [
+    "dry powder",
+    "DCP extinguisher",
+    "ABC extinguisher",
+    "powder"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "co2-extinguisher",
+   "cat": "extinguishers",
+   "name": "CO2 Extinguisher",
+   "short": "Clean extinguisher for electrical and liquid fires.",
+   "desc": "Discharges carbon dioxide gas that smothers a fire and leaves no residue, so it will not damage electrical equipment.",
+   "uses": [
+    "Electrical panels and server rooms",
+    "Offices",
+    "Laboratories"
+   ],
+   "aliases": [
+    "carbon dioxide",
+    "CO2"
+   ],
+   "images": [
+    1,
+    2
+   ]
+  },
+  {
+   "slug": "wet-chemical-extinguisher",
+   "cat": "extinguishers",
+   "name": "Wet Chemical Extinguisher",
+   "short": "For cooking oil and fat fires.",
+   "desc": "Designed for Class F fires in deep fat fryers and cooking oil. The chemical forms a soapy layer that cools the oil and seals the surface.",
+   "uses": [
+    "Commercial and canteen kitchens",
+    "Food production lines",
+    "Restaurants"
+   ],
+   "aliases": [
+    "wet chem",
+    "class F",
+    "kitchen extinguisher"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "foam-extinguisher",
+   "cat": "extinguishers",
+   "name": "Foam Extinguisher",
+   "short": "For solid materials and flammable liquid fires.",
+   "desc": "Foam covers burning liquids to stop them re-igniting and also works on paper, wood and textiles. A good choice where flammable liquids are stored.",
+   "uses": [
+    "Fuel and chemical stores",
+    "Workshops",
+    "Garages and parking areas"
+   ],
+   "aliases": [
+    "AFFF",
+    "foam type"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "water-spray-extinguisher",
+   "cat": "extinguishers",
+   "name": "Water Spray Extinguisher",
+   "short": "For Class A fires in solid materials.",
+   "desc": "A water extinguisher with a spray nozzle for fires in paper, wood, fabric and other solid materials. Simple to use and low cost to refill.",
+   "uses": [
+    "Offices and schools",
+    "Garment and textile areas",
+    "Residential buildings"
+   ],
+   "aliases": [
+    "water extinguisher",
+    "water type"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "jockey-pump",
+   "cat": "fire-pumps",
+   "name": "Jockey Pump",
+   "short": "Keeps the fire main pressurised.",
+   "desc": "A small vertical multistage pump that makes up for minor leaks and keeps the system at its standby pressure, so the main fire pump only starts when there is real demand.",
+   "uses": [
+    "Pressure maintenance in hydrant and sprinkler systems",
+    "Complete fire pump sets"
+   ],
+   "aliases": [
+    "pressure maintenance pump",
+    "booster pump",
+    "vertical multistage pump"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "electric-fire-pump",
+   "cat": "fire-pumps",
+   "name": "Electric Fire Pump",
+   "short": "Main fire pump driven by an electric motor.",
+   "desc": "The main duty pump for hydrant and sprinkler systems, available as split-case or end-suction pumps with their motor, or as a skid-mounted set with controller and valves.",
+   "uses": [
+    "Main duty pump",
+    "Complete skid-mounted pump sets",
+    "Factory and high-rise fire systems"
+   ],
+   "aliases": [
+    "fire pump",
+    "split case pump",
+    "end suction pump",
+    "main pump",
+    "motor"
+   ],
+   "images": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "slug": "diesel-fire-pump",
+   "cat": "fire-pumps",
+   "name": "Diesel Fire Pump",
+   "short": "Standby fire pump that runs without mains power.",
+   "desc": "A diesel engine driven fire pump that keeps the system running during a power cut. Usually installed as the standby partner to an electric pump.",
+   "uses": [
+    "Standby pump",
+    "Sites with unreliable mains power",
+    "Complete pump sets"
+   ],
+   "aliases": [
+    "diesel pump",
+    "engine driven pump",
+    "standby pump"
+   ],
+   "images": [
+    1
+   ]
+  },
+  {
+   "slug": "pump-control-panel",
+   "cat": "fire-pumps",
+   "name": "Pump Control Panel",
+   "short": "Starts, stops and monitors the fire pumps.",
+   "desc": "The controller that starts the fire pump automatically when system pressure drops and reports its status and alarms. Available for electric and diesel pumps.",
+   "uses": [
+    "Electric fire pump control",
+    "Diesel engine pump control",
+    "Jockey pump control"
+   ],
+   "aliases": [
+    "controller",
+    "fire pump controller",
+    "control panel",
+    "panel"
+   ],
+   "images": [
+    1,
+    2
+   ]
+  },
+  {
+   "slug": "fire-pump-flow-meter",
+   "cat": "fire-pumps",
+   "name": "Fire Pump Flow Meter",
+   "short": "Measures pump flow for testing.",
+   "desc": "Installed in the pump test line, the flow meter shows the pump's output so it can be tested regularly without discharging water through hydrants.",
+   "uses": [
+    "Fire pump performance testing",
+    "Annual inspections",
+    "Pump commissioning"
+   ],
+   "aliases": [
+    "flow meter",
+    "test meter"
+   ],
+   "images": [
+    1
+   ]
+  }
+ ]
+}

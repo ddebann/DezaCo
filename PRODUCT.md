@@ -45,7 +45,7 @@ Company name: DezaCo (user-confirmed; earlier working name SamCo). Open decision
 
 ## Brand Commitments
 
-Company name DezaCo. Brand colours red #C8161D and yellow #FFC20E. No logo or voice supplied yet.
+Company name DezaCo. Brand colours red #C8161D and yellow #FFC20E. Logo: yellow flame-D on red (client-supplied, traced to assets/img/logo-mark.svg). No voice guide supplied yet.
 
 ## Evidence on Hand
 

@@ -66,6 +66,9 @@ def sprite():
         parts.append(f'<symbol id="i-{k}" viewBox="0 0 24 24">{v}</symbol>')
     for k, v in PICTOS.items():
         parts.append(f'<symbol id="p-{k}" viewBox="0 0 24 24">{v}</symbol>')
+    mark = (ROOT / "assets/img/logo-mark.svg").read_text()
+    inner = mark[mark.index(">") + 1: mark.rindex("</svg>")]
+    parts.append(f'<symbol id="logo-d" viewBox="0 0 2105 2126">{inner}</symbol>')
     parts.append("</defs></svg>")
     return "".join(parts)
 
@@ -105,6 +108,8 @@ def page(path, title, desc, body, active=None):
 <meta name="description" content="{esc(desc)}">
 <meta name="theme-color" content="#c8161d">
 <link rel="icon" href="{u('assets/img/favicon.svg')}" type="image/svg+xml">
+<link rel="icon" href="{u('assets/img/favicon-32.png')}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{u('assets/img/apple-touch-icon.png')}">
 <link rel="preload" href="{u('assets/fonts/barlow-condensed-latin-700-normal.woff2')}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{u('assets/css/site.css')}">
 <script>(function(d){{d.classList.add("mfx");setTimeout(function(){{if(!d.classList.contains("mfx-on"))d.classList.remove("mfx")}},3000)}})(document.documentElement)</script>
@@ -122,7 +127,7 @@ def page(path, title, desc, body, active=None):
 <div class="navscrim" data-navscrim hidden></div>
 <header class="header" data-header><div class="wrap">
   <a class="brand" href="{u('index.html')}" aria-label="{esc(SITE['name'])} home">
-    <span class="brand__mark" aria-hidden="true">D</span>
+    <span class="brand__mark" aria-hidden="true"><svg class="brand__glyph" viewBox="0 0 2105 2126" focusable="false"><use href="#logo-d"/></svg></span>
     <span class="brand__word"><span class="brand__name">{esc(SITE['name'])}</span><span class="brand__sub">Fire protection equipment</span></span>
   </a>
   <nav class="nav" id="nav" aria-label="Main"><div class="nav__signs">{nav_signs}</div>{nav}</nav>
@@ -136,7 +141,7 @@ def page(path, title, desc, body, active=None):
 </main>
 <footer class="footer on-dark"><div class="wrap">
   <div>
-    <a class="brand" href="{u('index.html')}"><span class="brand__mark" aria-hidden="true">D</span><span class="brand__word"><span class="brand__name">{esc(SITE['name'])}</span><span class="brand__sub">Fire protection equipment</span></span></a>
+    <a class="brand" href="{u('index.html')}"><span class="brand__mark" aria-hidden="true"><svg class="brand__glyph" viewBox="0 0 2105 2126" focusable="false"><use href="#logo-d"/></svg></span><span class="brand__word"><span class="brand__name">{esc(SITE['name'])}</span><span class="brand__sub">Fire protection equipment</span></span></a>
     <p style="margin-top:16px;max-width:36ch">Valves, hydrant and hose equipment, extinguishers and fire pump systems for factories, high-rise buildings and industrial sites.</p>
   </div>
   <div><h2 class="foot-h">Products</h2><ul>{cat_links}<li><a href="{u('products.html')}">All products</a></li></ul></div>
@@ -471,7 +476,7 @@ def build_product(p):
 def build_about():
     body = f'''{crumbs([("{{base}}index.html", "Home"), (None, "About")], dark=True)}
 <header class="pagehead on-dark"><div class="wrap">
-  <span class="plate-lg" aria-hidden="true" style="color:#fff;font:800 4.6rem/1 var(--display)">D</span>
+  <span class="plate-lg plate-logo" aria-hidden="true"><svg viewBox="0 0 2105 2126" focusable="false"><use href="#logo-d"/></svg></span>
   <div class="pagehead__text"><h1>About DezaCo</h1><p>We make fire protection equipment for factories, high-rise buildings and industrial sites.</p></div><div></div>
 </div></header>
 <section class="section"><div class="wrap two">

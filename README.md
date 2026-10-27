@@ -43,3 +43,9 @@ Fire-safety sign system on dark "night" chrome: red plates with white pictograms
 - Page changes cross-fade in browsers that support view transitions.
 
 Phones (the "v4" blocks): a bottom bar holds Products, Enquiry list (with count) and WhatsApp; on a product page its first slot becomes "Add to list". The menu shows the four product families as red signs. The header hides when scrolling down and returns when scrolling up. Family panels, tabs and category chips are compacted so pages are shorter, and every control is at least 44px tall. Fonts: Barlow Condensed and Barlow, self-hosted in `assets/fonts` (SIL Open Font License). See `DESIGN.md` for tokens and components.
+
+## Logo
+
+- `assets/img/logo-mark.svg` — the flame-D mark on its own (yellow #FFC20E), traced from the client's artwork. The site uses it from the SVG sprite (`#logo-d`), built from this file.
+- `assets/img/logo-dezaco.svg` / `.png` — the full logo tile: yellow mark on safety red #C8161D (512px PNG).
+- `assets/img/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` — browser and home-screen icons.

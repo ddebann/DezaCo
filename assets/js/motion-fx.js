@@ -290,14 +290,17 @@
   var cancels = [];
   function bindScroll() {
     cancels.forEach(function (c) { c(); }); cancels = [];
+    /* ticker: two endless rows running in opposite directions, like a carousel.
+       Each row holds the name list three times, so sliding it by one third loops seamlessly. */
     var box = $(".ticker");
+    marquee = [];
     if (box) {
-      var travel = (window.innerHeight + box.offsetHeight) * 0.45;
       $$("[data-ticker]", box).forEach(function (row) {
-        var dir = +row.getAttribute("data-ticker");
-        var start = dir > 0 ? 0 : -row.scrollWidth / 3;
-        var a = animate(row, { x: [start, start - dir * travel] }, { ease: "linear" });
-        cancels.push(scroll(a, { target: box, offset: ["start end", "end start"] }));
+        var dir = +row.getAttribute("data-ticker"), third = row.scrollWidth / 3;
+        var start = dir > 0 ? 0 : -third;
+        var a = animate(row, { x: [start, start - dir * third] }, { duration: third / 70, ease: "linear", repeat: Infinity });
+        marquee.push(a);
+        cancels.push(function () { a.stop(); });
       });
     }
     var mk = $(".stage__mark"), stage = $(".stage");
@@ -312,7 +315,17 @@
       cancels.push(scroll(a, { target: sec, offset: ["start end", "end start"] }));
     });
   }
+  var marquee = [];
   bindScroll();
+  /* the loop length depends on the display font's width, so measure again once it has loaded */
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(bindScroll);
+  /* pointing at the ticker pauses it so the names can be read */
+  (function () {
+    var box = $(".ticker"); if (!box) return;
+    box.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") marquee.forEach(function (a) { a.pause(); }); });
+    box.addEventListener("pointerleave", function () { marquee.forEach(function (a) { a.play(); }); });
+  })();
   var rz;
-  window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(bindScroll, 200); });
+  var lastW = window.innerWidth;
+  window.addEventListener("resize", function () { if (window.innerWidth === lastW) return; lastW = window.innerWidth; clearTimeout(rz); rz = setTimeout(bindScroll, 200); });
 })();

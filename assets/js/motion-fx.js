@@ -67,13 +67,10 @@
   function heroIntro() {
     var hero = $(".stage");
     if (!hero) return;
-    var mark = $(".stage__mark span", hero), kbar = $(".stage__kbar", hero), ktext = $(".stage__ktext", hero);
+    var mark = $(".stage__mark span", hero);
     var W = vw();
     /* giant outlined wordmark glides in behind the products */
     if (mark) slideIn(mark, { x: W * 0.35 }, { duration: 1.8, delay: 0.2 });
-    /* kicker: red bar draws, then its words follow it in */
-    if (kbar) { kbar.parentNode.style.opacity = "1"; animate(kbar, { scaleX: [0, 1] }, { duration: 0.6, ease: EXPO, delay: 0.05 }); }
-    if (ktext) slideIn(ktext, { x: -40 }, { duration: 0.8, delay: 0.25 });
     /* headline: line 1 from the left edge, line 2 from the right, line 3 from the left */
     $$(".hero-h .ln > span", hero).forEach(function (ln, i) {
       var ws = split(ln), right = i % 2 === 1;

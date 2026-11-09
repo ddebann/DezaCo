@@ -663,3 +663,10 @@ Night crumbs and head with a red glow at lower right: 112px red plate (72px on p
 - **Don't** repeat the dock's actions in the phone header, closing strip or footer.
 - **Don't** wrap tabs or chips into a stack on phones, or let the page scroll sideways.
 - **Don't** hide content behind a reveal: without JavaScript or with reduced motion, everything is visible in place.
+
+
+## v7 (Nov 2026)
+
+- Final logo in place: header and footer show the flame-D mark (50x44) beside the DEZACO wordmark (141x19), no tagline; the About page header shows the full stacked logo; favicon and home-screen icon are the mark on dark ink #16191C. The giant outlined word behind the hero line-up is now the logo's own wordmark drawn as a 1.5px outline at 11% white.
+- Removed the hero eyebrow line ("Fire protection manufacturer · Office in the USA"): a tracked-caps kicker with a rule and diamond separator is a stock pattern and added nothing the headline does not already say.
+- Seven product photos replaced with DezaCo-branded versions, backgrounds removed: pillar hydrant, breeching inlet, butterfly valve, ball valve, angle hose valve, fire hose rack nipple, hose rack. The hero line-up uses a single red hydrant cut from the pillar hydrant photo (pillar-hydrant-hero.webp).

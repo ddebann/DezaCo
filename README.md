@@ -46,6 +46,12 @@ Phones (the "v4" blocks): a bottom bar holds Products, Enquiry list (with count)
 
 ## Logo
 
-- `assets/img/logo-mark.svg` — the flame-D mark on its own (yellow #FFC20E), traced from the client's artwork. The site uses it from the SVG sprite (`#logo-d`), built from this file.
-- `assets/img/logo-dezaco.svg` / `.png` — the full logo tile: yellow mark on safety red #C8161D (512px PNG).
-- `assets/img/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` — browser and home-screen icons.
+Final DezaCo logo (client-supplied, traced to vector): white D with red flames, and the DEZACO wordmark with red accents. Red is #C8161D.
+
+- `assets/img/logo-dezaco.svg` / `.png` — full stacked logo, white, for dark backgrounds.
+- `assets/img/logo-dezaco-dark.svg` — the same logo with ink instead of white, for light backgrounds.
+- `assets/img/logo-mark.svg` — the flame-D mark on its own.
+- `assets/img/logo-wordmark.svg` — the DEZACO wordmark on its own.
+- `assets/img/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` — browser and home-screen icons (mark on dark ink).
+
+`build.py` turns the mark, wordmark and full logo into SVG symbols (`#logo-mark`, `#logo-word`, `#logo-full`, plus an outline wordmark `#logo-word-o` for the hero). The header and footer use the mark plus wordmark side by side; the About page shows the full stacked logo.

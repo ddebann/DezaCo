@@ -66,9 +66,20 @@ def sprite():
         parts.append(f'<symbol id="i-{k}" viewBox="0 0 24 24">{v}</symbol>')
     for k, v in PICTOS.items():
         parts.append(f'<symbol id="p-{k}" viewBox="0 0 24 24">{v}</symbol>')
-    mark = (ROOT / "assets/img/logo-mark.svg").read_text()
-    inner = mark[mark.index(">") + 1: mark.rindex("</svg>")]
-    parts.append(f'<symbol id="logo-d" viewBox="0 0 2105 2126">{inner}</symbol>')
+    # DezaCo logo, from the vector files in assets/img. White parts take currentColor so the
+    # same symbols work on dark and light backgrounds; the flame red stays fixed.
+    import re as _re
+    def _logo(name):
+        svg = (ROOT / f"assets/img/{name}").read_text()
+        vb = _re.search(r'viewBox="([^"]+)"', svg).group(1)
+        return vb, svg[svg.index(">") + 1: svg.rindex("</svg>")].replace('fill="#FFFFFF"', 'fill="currentColor"')
+    for sid, fname in (("logo-mark", "logo-mark.svg"), ("logo-word", "logo-wordmark.svg"), ("logo-full", "logo-dezaco.svg")):
+        vb, inner = _logo(fname)
+        parts.append(f'<symbol id="{sid}" viewBox="{vb}">{inner}</symbol>')
+    # outline-only wordmark for the giant DEZACO behind the hero line-up
+    vb, inner = _logo("logo-wordmark.svg")
+    outline = _re.sub(r' fill="[^"]+"', "", inner).replace("<path ", '<path vector-effect="non-scaling-stroke" ')
+    parts.append(f'<symbol id="logo-word-o" viewBox="{vb}">{outline}</symbol>')
     parts.append("</defs></svg>")
     return "".join(parts)
 
@@ -127,8 +138,8 @@ def page(path, title, desc, body, active=None):
 <div class="navscrim" data-navscrim hidden></div>
 <header class="header" data-header><div class="wrap">
   <a class="brand" href="{u('index.html')}" aria-label="{esc(SITE['name'])} home">
-    <span class="brand__mark" aria-hidden="true"><svg class="brand__glyph" viewBox="0 0 2105 2126" focusable="false"><use href="#logo-d"/></svg></span>
-    <span class="brand__word"><span class="brand__name">{esc(SITE['name'])}</span><span class="brand__sub">Fire protection equipment</span></span>
+    <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 1911 1694" focusable="false"><use href="#logo-mark"/></svg></span>
+    <span class="brand__word"><svg class="brand__wordmark" viewBox="0 0 3763 507" focusable="false" aria-hidden="true"><use href="#logo-word"/></svg></span>
   </a>
   <nav class="nav" id="nav" aria-label="Main"><div class="nav__signs">{nav_signs}</div>{nav}</nav>
   <button class="btn btn--ink btn--sm list-btn" type="button" data-open-list aria-haspopup="dialog">
@@ -141,7 +152,7 @@ def page(path, title, desc, body, active=None):
 </main>
 <footer class="footer on-dark"><div class="wrap">
   <div>
-    <a class="brand" href="{u('index.html')}"><span class="brand__mark" aria-hidden="true"><svg class="brand__glyph" viewBox="0 0 2105 2126" focusable="false"><use href="#logo-d"/></svg></span><span class="brand__word"><span class="brand__name">{esc(SITE['name'])}</span><span class="brand__sub">Fire protection equipment</span></span></a>
+    <a class="brand" href="{u('index.html')}" aria-label="{esc(SITE['name'])} home"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 1911 1694" focusable="false"><use href="#logo-mark"/></svg></span><span class="brand__word"><svg class="brand__wordmark" viewBox="0 0 3763 507" focusable="false" aria-hidden="true"><use href="#logo-word"/></svg></span></a>
     <p style="margin-top:16px;max-width:36ch">Valves, hydrant and hose equipment, extinguishers and fire pump systems for factories, high-rise buildings and industrial sites.</p>
   </div>
   <div><h2 class="foot-h">Products</h2><ul>{cat_links}<li><a href="{u('products.html')}">All products</a></li></ul></div>
@@ -223,7 +234,7 @@ def finder(idp):
 # ---------------------------------------------------------------- pages
 HERO_LINEUP = [
     ("electric-fire-pump", 1, 0.60), ("gate-valve", 1, 0.80), ("non-return-valve", 1, 0.40),
-    ("pillar-hydrant", 1, 1.0), ("breeching-inlet", 1, 0.46), ("hydrant-box", 1, 0.60),
+    ("pillar-hydrant", "hero", 1.0), ("breeching-inlet", 1, 0.46), ("hydrant-box", 1, 0.60),
     ("abc-dry-powder-extinguisher", 1, 0.55),
 ]
 CAT_IMG = {"valves": ("pressure-relief-valve", 1), "hydrant-hose": ("pillar-hydrant", 1),
@@ -284,7 +295,6 @@ def build_home():
 <section class="stage on-dark" aria-labelledby="hero-h">
   <div class="wrap stage__top">
     <div class="stage__copy">
-      <p class="stage__kicker"><span class="stage__kbar"></span><span class="stage__ktext">Fire protection manufacturer <i></i> Office in the USA</span></p>
       <h1 id="hero-h" class="hero-h"><span class="ln"><span>Fire protection</span></span><span class="ln"><span>equipment,</span></span><span class="ln"><span>made by <em>DezaCo.</em></span></span></h1>
       <p class="stage__lede">Valves, hydrant and hose gear, extinguishers and complete fire pump sets<span class="lede-more"> for factories, high-rise buildings and industrial sites. Build your list and get a price on WhatsApp</span>.</p>
       <div class="stage__actions">
@@ -297,7 +307,7 @@ def build_home():
       <nav class="catlinks" aria-label="Product categories">{catlinks()}</nav>
     </div>
   </div>
-  <div class="shelf"><div class="stage__mark" aria-hidden="true"><span>DezaCo</span></div><button class="shelf__more" type="button" data-shelf-more aria-label="Show more products">{ic('arrow')}</button>
+  <div class="shelf"><div class="stage__mark" aria-hidden="true"><span><svg viewBox="0 0 3763 507" focusable="false"><use href="#logo-word-o"/></svg></span></div><button class="shelf__more" type="button" data-shelf-more aria-label="Show more products">{ic('arrow')}</button>
   <div class="lineup" data-lineup><div class="lineup__track">
     <div class="lineup__row">{lineup}</div>
     <div class="lineup__pipe" aria-hidden="true"><span class="lineup__fill"></span><span class="lineup__flow"></span></div>
@@ -476,7 +486,7 @@ def build_product(p):
 def build_about():
     body = f'''{crumbs([("{{base}}index.html", "Home"), (None, "About")], dark=True)}
 <header class="pagehead on-dark"><div class="wrap">
-  <span class="plate-lg plate-logo" aria-hidden="true"><svg viewBox="0 0 2105 2126" focusable="false"><use href="#logo-d"/></svg></span>
+  <span class="about-logo" aria-hidden="true"><svg viewBox="0 0 3763 2413" focusable="false"><use href="#logo-full"/></svg></span>
   <div class="pagehead__text"><h1>About DezaCo</h1><p>We make fire protection equipment for factories, high-rise buildings and industrial sites.</p></div><div></div>
 </div></header>
 <section class="section"><div class="wrap two">

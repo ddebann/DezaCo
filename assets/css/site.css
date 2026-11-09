@@ -1189,33 +1189,35 @@ a, button, .btn, .tab, .chip, .tile__add, .dock__item { touch-action: manipulati
    ===================================================================== */
 .w { display: inline-block; }
 
-/* kicker above the headline */
-.stage__kicker { display: flex; align-items: center; gap: 14px; margin: 0 0 -6px; font: 600 0.92rem/1.2 var(--display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--night-mute); }
-.stage__kbar { flex: none; width: 40px; height: 3px; border-radius: 2px; background: var(--red); transform-origin: 0 50%; }
-.stage__ktext i { display: inline-block; width: 6px; height: 6px; margin: 0 10px 2px; background: var(--yellow, #ffc20e); transform: rotate(45deg); vertical-align: middle; }
-
 /* giant outlined wordmark behind the line-up */
 .stage__mark { position: absolute; z-index: -1; left: 0; right: 0; bottom: 46px; text-align: center; white-space: nowrap; pointer-events: none; overflow: hidden; }
-.stage__mark span { display: inline-block; font: 800 clamp(6.5rem, 25vw, 26rem)/0.8 var(--display); text-transform: uppercase; letter-spacing: 0; color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.09); }
-@supports not (-webkit-text-stroke: 1px #fff) { .stage__mark span { color: rgba(255, 255, 255, 0.04); } }
+.stage__mark span { display: inline-block; }
+.stage__mark svg { display: block; width: min(112vw, 1900px); height: auto; aspect-ratio: 3763 / 507; fill: none; stroke: rgba(255, 255, 255, 0.11); stroke-width: 1.5; }
 
 /* hand the hero over from CSS keyframes to Motion */
 .mfx .hero-h .ln { overflow: visible; }
 .mfx .hero-h .ln > span, .mfx .stage__lede, .mfx .stage__actions, .mfx .stage__side, .mfx .catlink, .mfx .pagehead.on-dark h1 { animation: none; }
-.mfx .stage__kicker, .mfx .hero-h .ln > span, .mfx .stage__lede, .mfx .stage__actions > *, .mfx .finder, .mfx .catlink, .mfx .stage__mark span, .mfx .pagehead.on-dark h1 { opacity: 0; }
+.mfx .hero-h .ln > span, .mfx .stage__lede, .mfx .stage__actions > *, .mfx .finder, .mfx .catlink, .mfx .stage__mark span, .mfx .pagehead.on-dark h1 { opacity: 0; }
 .mfx .hero-h em::after { animation-delay: 1.35s; }
 @media (max-width: 960px) {
-  .stage__kicker { font-size: 0.78rem; letter-spacing: 0.1em; gap: 10px; }
-  .stage__kbar { width: 26px; }
   .stage__mark { bottom: 52px; }
-  .stage__mark span { font-size: clamp(4.5rem, 24vw, 10rem); }
+  .stage__mark svg { width: 118vw; stroke-width: 1.2; }
 }
-@media (max-width: 420px) { .stage__ktext i { margin: 0 6px 2px; } }
 
-/* v6.1 — DezaCo logo (yellow flame-D on safety red) */
-.brand__mark { color: var(--yellow, #ffc20e); width: 46px; height: 46px; }
-.brand__glyph { width: 82%; height: 82%; fill: currentColor; display: block; transform: translateX(-3%); }
-.plate-logo { color: var(--yellow, #ffc20e); }
-.plate-logo svg { width: 68%; height: 68%; fill: currentColor; }
+/* v7 — final DezaCo logo: white D with red flames, wordmark with red accents */
+.brand { color: #fff; gap: 12px; }
+.brand__mark { width: 50px; height: 44px; background: none; border-radius: 0; color: inherit; display: block; flex: none; }
+.brand__mark svg { display: block; width: 100%; height: 100%; }
+.brand__word { gap: 6px; }
+.brand__wordmark { display: block; width: 141px; height: 19px; color: inherit; }
+.brand__sub { margin-top: 0; }
+.pagehead .about-logo { display: block; flex: none; width: clamp(170px, 21vw, 290px); color: #fff; }
+.pagehead .about-logo svg { display: block; width: 100%; height: auto; aspect-ratio: 3763 / 2413; }
+.pagehead.on-dark .about-logo { animation: fadeUp 0.6s var(--ease) both; }
+@media (max-width: 860px) {
+  .brand__mark { width: 43px; height: 38px; }
+  .brand__wordmark { width: 119px; height: 16px; }
+  .pagehead .about-logo { width: 150px; margin-top: 6px; }
+}
 /* hero: no underline under DEZACO */
 .hero-h em::after { content: none; display: none; }
